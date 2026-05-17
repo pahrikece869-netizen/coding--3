@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Fanta Orange Landing Page</title>
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<style>
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+overflow-x:hidden;
+font-family:sans-serif;
+background:#ff6600;
+color:white;
+}
+
+/* HERO TYPO */
+
+.hero-text{
+font-size:18vw;
+font-weight:900;
+line-height:1;
+opacity:.12;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+white-space:nowrap;
+pointer-events:none;
+}
+
+/* FANTA CAN */
+
+.fanta-can{
+width:280px;
+z-index:20;
+position:relative;
+filter:
+drop-shadow(0 20px 40px rgba(0,0,0,.35));
+}
+
+/* ORANGE ITEMS */
+
+.fruit{
+position:absolute;
+width:90px;
+z-index:15;
+filter:
+drop-shadow(0 10px 20px rgba(0,0,0,.2));
+}
+
+/* GLOW */
+
+.glow{
+position:absolute;
+width:500px;
+height:500px;
+background:radial-gradient(circle,
+rgba(255,255,255,.25),
+transparent 70%);
+border-radius:50%;
+filter:blur(40px);
+z-index:1;
+}
+
+/* SECTION */
+
+.panel{
+min-height:100vh;
+position:relative;
+overflow:hidden;
+}
+
+/* TEXT */
+
+.title{
+font-size:clamp(3rem,8vw,7rem);
+font-weight:900;
+line-height:1;
+}
+
+.desc{
+font-size:1.1rem;
+line-height:1.8;
+opacity:.9;
+}
+
+/* CRATE */
+
+.crate{
+width:320px;
+height:220px;
+border:4px solid rgba(255,255,255,.3);
+border-radius:25px;
+position:absolute;
+bottom:8%;
+left:50%;
+transform:translateX(-50%);
+backdrop-filter:blur(8px);
+background:rgba(255,255,255,.08);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.fanta-can{
+width:180px;
+}
+
+.fruit{
+width:60px;
+}
+
+.hero-text{
+font-size:28vw;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="fixed top-0 left-0 w-full z-50 px-8 py-5 flex items-center justify-between backdrop-blur-md bg-white/5">
+
+<h1 class="text-3xl font-black tracking-wider">
+FANTA
+</h1>
+
+<div class="hidden md:flex gap-10 text-sm font-bold uppercase">
+<a href="#">Home</a>
+<a href="#">Flavors</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
+</div>
+
+<button class="bg-white text-orange-600 px-6 py-3 rounded-full font-bold hover:scale-105 transition">
+Buy Now
+</button>
+
+</nav>
+
+<!-- HERO SECTION -->
+
+<section class="panel flex items-center justify-center relative bg-[#ff6600]">
+
+<div class="hero-text">
+WANTA FANTA
+</div>
+
+<div class="glow"></div>
+
+<!-- ORANGE DECOR -->
+
+<img
+src="https://pngimg.com/d/orange_PNG791.png"
+class="fruit orange1"
+style="top:20%; left:18%;"
+/>
+
+<img
+src="https://pngimg.com/d/orange_PNG791.png"
+class="fruit orange2"
+style="top:65%; left:22%;"
+/>
+
+<img
+src="https://pngimg.com/d/orange_PNG791.png"
+class="fruit orange3"
+style="top:28%; right:18%;"
+/>
+
+<img
+src="https://pngimg.com/d/orange_PNG791.png"
+class="fruit orange4"
+style="bottom:15%; right:22%;"
+/>
+
+<!-- LEAVES -->
+
+<img
+src="https://pngimg.com/d/leaf_PNG36878.png"
+class="fruit leaf1"
+style="width:70px; top:25%; right:30%;"
+/>
+
+<img
+src="https://pngimg.com/d/leaf_PNG36878.png"
+class="fruit leaf2"
+style="width:70px; bottom:20%; left:30%;"
+/>
+
+<!-- CAN -->
+
+<img
+src="https://static.vecteezy.com/system/resources/previews/036/498/930/non_2x/ai-generated-fanta-can-isolated-on-transparent-background-free-png.png"
+class="fanta-can"
+id="fantaCan"
+/>
+
+</section>
+
+<!-- SECTION 2 -->
+
+<section class="panel bg-[#ff5a00] flex items-center px-8 md:px-20">
+
+<div class="grid md:grid-cols-2 gap-10 items-center w-full">
+
+<div></div>
+
+<div class="space-y-6 details">
+
+<h1 class="title">
+Taste The Explosion
+</h1>
+
+<p class="desc">
+Experience the ultimate citrus blast with every sip of Fanta Orange.
+Packed with vibrant flavor, fizzy freshness, and unstoppable energy.
+</p>
+
+<p class="desc">
+Feel the juicy orange sensation combined with playful sparkling soda
+that refreshes your mood instantly.
+</p>
+
+<button class="bg-white text-orange-600 px-8 py-4 rounded-full font-black">
+Explore Flavor
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SECTION 3 -->
+
+<section class="panel bg-[#140b05] flex items-center justify-center relative">
+
+<h1 class="absolute top-20 text-center title opacity-20">
+FLAVOR EXPLOSION
+</h1>
+
+<div class="crate"></div>
+
+</section>
+
+<script>
+
+gsap.registerPlugin(ScrollTrigger)
+
+/* =========================================
+FLOATING ANIMATION
+Kaleng Fanta melayang otomatis
+========================================= */
+
+gsap.to("#fantaCan",{
+y:-25,
+duration:2,
+repeat:-1,
+yoyo:true,
+ease:"power1.inOut"
+})
+
+/* =========================================
+SECTION 2 SCROLL TRANSITION
+Kaleng bergerak ke kiri & rotate
+Buah menyebar keluar
+========================================= */
+
+gsap.timeline({
+
+scrollTrigger:{
+trigger:".details",
+start:"top 80%",
+end:"bottom 30%",
+scrub:1
+}
+
+})
+
+.to("#fantaCan",{
+x:-350,
+rotation:-25,
+scale:.9
+},0)
+
+.to(".orange1",{
+x:-250,
+y:-120,
+rotation:120
+},0)
+
+.to(".orange2",{
+x:-180,
+y:200,
+rotation:-120
+},0)
+
+.to(".orange3",{
+x:250,
+y:-150,
+rotation:180
+},0)
+
+.to(".orange4",{
+x:220,
+y:220,
+rotation:-180
+},0)
+
+.to(".leaf1",{
+x:160,
+y:-100
+},0)
+
+.to(".leaf2",{
+x:-160,
+y:120
+},0)
+
+/* =========================================
+TEXT APPEAR ANIMATION
+Text fade up stagger
+========================================= */
+
+gsap.from(".details > *",{
+
+scrollTrigger:{
+trigger:".details",
+start:"top 75%"
+},
+
+y:80,
+opacity:0,
+duration:1,
+stagger:.2
+
+})
+
+/* =========================================
+SECTION 3 EXPLOSION EFFECT
+Kaleng kembali ke tengah
+Membesar lalu masuk crate
+========================================= */
+
+gsap.timeline({
+
+scrollTrigger:{
+trigger:".crate",
+start:"top 80%",
+end:"bottom 50%",
+scrub:1
+}
+
+})
+
+.to("#fantaCan",{
+x:0,
+y:180,
+scale:1.3,
+rotation:0,
+ease:"power2.out"
+})
+
+.to(".orange1",{
+x:-600,
+y:-300,
+opacity:0
+},0)
+
+.to(".orange2",{
+x:-700,
+y:400,
+opacity:0
+},0)
+
+.to(".orange3",{
+x:700,
+y:-300,
+opacity:0
+},0)
+
+.to(".orange4",{
+x:700,
+y:400,
+opacity:0
+},0)
+
+.to(".leaf1",{
+x:500,
+y:-250,
+opacity:0
+},0)
+
+.to(".leaf2",{
+x:-500,
+y:250,
+opacity:0
+},0)
+
+</script>
+
+</body>
+</html>
